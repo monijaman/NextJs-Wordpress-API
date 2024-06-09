@@ -1,0 +1,135 @@
+// Define font size variables
+$font-size-headline: 2.5rem;
+$font-size-paragraph: 1rem;
+$font-size-button: 1rem;
+
+.image_textblock {
+  display: flex;
+  width: 100%;
+  max-width: 1400px; // Adjust as needed for your layout
+  margin: 0 auto; // Center the block horizontally
+  background-color: #fff; // Background color for the block
+  border-radius: 8px; // Rounded corners
+  overflow: hidden; // Ensure content stays within the block
+  padding: 100px 0;
+
+  &__image {
+    flex: none; // Prevent the image from shrinking
+    width: 50%; // Fixed width for the image
+    height: auto;
+    object-fit: cover; // Ensure the image covers its container
+    padding: 50px 0px 50px 180px;
+  }
+
+  &__content {
+    box-sizing: border-box;
+    flex: auto; // Take up remaining space
+    padding: 20px 90px; // 20px top/bottom padding, 80px left/right padding
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__headline {
+    font-size: $font-size-headline;
+    margin-bottom: 10px; // Add some spacing below the headline
+    color: #333; // Headline text color
+    font-weight: bold;
+  }
+
+  &__paragraph {
+    line-height: 1.4rem;
+    font-size: $font-size-paragraph;
+    margin-bottom: 20px; // Space below the paragraph
+    color: #666; // Paragraph text color
+  }
+
+  strong {
+    font-weight: bold;
+  }
+
+  &__button {
+    font-size: $font-size-button;
+    padding: 20px 20px;
+    background-color: #8B2351;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: #e93e8b; // Button background color on hover
+    }
+  }
+}
+
+  @media (max-width: 1000px) {
+
+    
+    .image_textblock {
+      padding: 50px 0;
+
+      &__image {
+        flex: none;
+        width: 50%;
+        height: auto;
+        object-fit: cover;
+        padding: 50px;
+      }
+
+      &__content {
+        padding: 20px 20px; 
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+
+    .image_textblock {
+      padding: 40px 10px;
+      display: block;
+
+        
+      &__image {
+        width: 100%;
+        max-width: 100%;
+        padding: 10px;
+        margin: 0 auto;
+      }
+
+      &__headline {
+        font-size: 2rem;
+      }
+
+      &__paragraph {
+        font-size: 0.9rem;
+      }
+
+      &__button {
+        padding: 16px 36px;
+        display: block;
+        width: 100%;
+      }
+    }
+  }
+
+  @media (max-width: 480px) {
+    .image_textblock {
+      padding: 20px 10px;
+   
+
+      &__content {
+        padding: 20px 20px; 
+      }
+
+      &__headline {
+        font-size: 1.75rem;
+      }
+
+      &__paragraph {
+        font-size: 0.8rem;
+      }
+
+    
+    }
+  }

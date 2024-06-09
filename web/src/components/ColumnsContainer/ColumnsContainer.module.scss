@@ -1,0 +1,119 @@
+$font-size-headline: 1.5rem;
+$font-size-paragraph: 1rem;
+$font-size-icon: 2rem;
+
+.columns_container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1450px;
+  height: auto;
+  background: url('/blue-sky.png') no-repeat center center;
+  background-size: cover;
+  position: relative;
+  margin: 0 auto;
+  
+  .column {
+    flex: 1 1 25%; // Four columns per row initially
+    height: 750px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 20px 20px 60px;
+    position: relative;
+    overflow: hidden;
+    transition: background-color 0.3s, border 0.3s;
+    border-right: 1px solid rgba(0, 0, 0, 0.5);
+
+    &:last-child {
+      border-right: none;
+    }
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.3);
+      cursor: url('/hover.png'), auto;
+
+      .icon {
+        background-image: url('/plus_active.png');
+      }
+    }
+
+    .content {
+      transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+      transform: translateY(100%);
+      opacity: 0;
+    }
+
+    &:hover .content {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .icon {
+      font-size: $font-size-icon;
+      color: #fff;
+      margin-bottom: 40px;
+      background-image: url('/plus_inactive.png');
+      background-size: cover;
+      width: 50px;
+      height: 50px;
+      transition: background-image 0.3s;
+    }
+
+    .headline {
+      font-size: $font-size-headline;
+      color: #fff;
+      margin-bottom: 20px;
+    }
+
+    .paragraph {
+      font-size: $font-size-paragraph;
+      color: #fff;
+      line-height: 1.2rem;
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .columns_container {
+    flex-direction: row; // Ensure the container remains in row direction
+    justify-content: center; // Center columns horizontally
+    flex-wrap: wrap;
+    padding: 0 20px;
+ 
+
+  .column {
+    flex: 1 1 45%; // Two columns per row
+    margin: 10px;
+    height: 550px;
+    border-right: none; // Remove border for responsive view
+  }
+}
+}
+
+@media (max-width: 768px) {
+  .columns_container {
+    padding: 0;
+  .column {
+    flex: 1 1 100%; // One column per row on smaller devices
+    padding:  30px;
+    margin: 0;
+    height: 550px;
+    background: url('/blue-sky.png') no-repeat center center;
+  }
+
+  .icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .headline {
+    font-size: 1.25rem;
+  }
+
+  .paragraph {
+    font-size: 0.875rem;
+    line-height: 1.1rem;
+  }
+  }
+}

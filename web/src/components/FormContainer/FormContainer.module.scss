@@ -1,0 +1,146 @@
+// Define font size variables
+$font-size-header: 2rem;
+$font-size-subheader: 0.9rem;
+$font-size-input: 1rem;
+$font-size-button: 1rem;
+
+.form_container {
+  display: flex;
+  justify-content: flex-end; // Push content to the right
+  width: 100%;
+  min-height: 700px; // Adjust the height as needed
+  background: url('/hand-tree.jpg') no-repeat center center;
+  background-size: cover;
+  position: relative;
+  overflow: hidden; // Ensure content stays within the container
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Add a subtle shadow
+  margin-bottom: 100px;
+
+  &__success{
+    color: greenyellow;
+  }
+  &__failed{
+    color: red;
+  }
+
+  &__form {
+    flex: 0 0 30%; // Take less than half of the container width
+    margin: 10% 10%; // 80px padding on top and right, adjust as needed
+    background: #172938;
+    padding: 40px;
+    border-radius: 8px; // Rounded corners
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative; // Ensure the form is above the overlay
+
+    span{
+      color: red;
+      display: block;
+      padding: 5px;
+    }
+    @media (max-width: 1000px) {
+      flex: 0 0 40%; // Take more space on medium screens
+      margin: 10% 5%; // Adjust margins for medium screens
+    }
+
+    @media (max-width: 768px) {
+      flex: 0 0 80%; // Take more space on smaller screens
+      margin: 10% 5%; // Adjust margins for smaller screens
+    }
+
+    @media (max-width: 480px) {
+    
+      flex: 0 0 100%; // Take full width on mobile
+      margin: 0; // Remove margins on mobile
+      padding: 20px; // Adjust padding for mobile
+      border-radius: 0; // Remove border radius for mobile
+    }
+  }
+  @media (max-width: 768px) {
+   
+  min-height: 200px;
+  border-radius: 0;
+  }
+
+  &__header {
+    font-size: $font-size-header;
+    margin-bottom: 30px; // Add some spacing below the header
+    color: #fff; // Header text color
+
+    @media (max-width: 480px) {
+      font-size: 1.5rem; // Adjust font size for mobile
+      margin-bottom: 20px; // Adjust margin for mobile
+    }
+  }
+
+  &__subheader {
+    font-size: $font-size-subheader;
+    margin-bottom: 20px; // Space below the subheader
+    color: #fff; // Subheader text color
+
+    @media (max-width: 480px) {
+      font-size: 0.8rem; // Adjust font size for mobile
+      margin-bottom: 15px; // Adjust margin for mobile
+    }
+  }
+
+  &__input,
+  &__textarea {
+    background: #000;
+    font-size: $font-size-input;
+    padding: 15px 10px;
+    margin-top: 30px; // Space below each input
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box; // Ensure padding doesn't affect width
+    color: #fff;
+
+    &::placeholder {
+      font-size: 1rem;
+      color: rgb(189, 186, 186); // Placeholder text color
+    }
+
+    &:focus {
+      border-color: #0070f3;
+      outline: none;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 0.9rem; // Adjust font size for mobile
+      padding: 10px; // Adjust padding for mobile
+      margin-bottom: 20px; // Adjust margin for mobile
+    }
+  }
+
+  &__textarea {
+    height: 100px; // Adjust as needed
+
+    @media (max-width: 480px) {
+      height: 80px; // Adjust height for mobile
+    }
+  }
+
+  &__button {
+    font-size: $font-size-button;
+    padding: 10px 20px;
+    background-color: #fff;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 25px;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: #005bb5; // Button background color on hover
+    }
+
+    @media (max-width: 480px) {
+      font-size: 0.9rem; // Adjust font size for mobile
+      padding: 10px 15px; // Adjust padding for mobile
+     
+    }
+  }
+}

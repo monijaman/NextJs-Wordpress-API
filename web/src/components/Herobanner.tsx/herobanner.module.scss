@@ -1,0 +1,78 @@
+// Define font size variables
+$font-size-title: 4rem;
+$font-size-text: 1.2rem;
+$font-size-button: 1rem;
+
+.herobanner {
+  position: relative;
+  width: 100%;
+  height: 750px; // Adjust the height as needed
+  overflow: hidden;
+
+  &__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1; // Ensure the image is behind the content
+  }
+
+  &__content {
+    position: absolute;
+    bottom: 50px; // Adjust as needed to move content up or down
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1; // Ensure the content is above the image
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff; // White text color
+    text-align: center;
+    width: 100%;
+
+    &__title {
+      font-size: $font-size-title; // Use variable for font size
+      margin-bottom: 1.5rem;
+
+      @media (max-width: 1200px) {
+        font-size: 3.5rem; // Adjust font size for medium screens
+      }
+
+      @media (max-width: 768px) {
+        font-size: 2.5rem; // Adjust font size for tablets
+      }
+
+      @media (max-width: 480px) {
+        font-size: 2rem; // Adjust font size for mobile
+      }
+    }
+
+    &__text {
+      font-size: $font-size-text; // Use variable for font size
+      margin-bottom: 1.5rem;
+      width: 80%;
+      line-height: 1.4rem;
+
+      @media (max-width: 1200px) {
+        font-size: 1.1rem; // Adjust font size for medium screens
+      }
+
+      @media (max-width: 768px) {
+        font-size: 1rem; // Adjust font size for tablets
+        width: 90%; // Increase width for tablets
+      }
+
+      @media (max-width: 480px) {
+        font-size: 0.9rem; // Adjust font size for mobile
+        width: 95%; // Increase width for mobile
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    height: 450px; // Adjust the height as needed
+  overflow: hidden;
+  }
+}

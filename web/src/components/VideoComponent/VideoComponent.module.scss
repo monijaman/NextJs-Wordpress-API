@@ -1,0 +1,93 @@
+.videoContainer {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; // Maintain 16:9 aspect ratio
+  margin: 80px auto 140px; // Center the container
+  background: #000;
+  max-width: 1200px;
+
+  .thumbnailContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+  }
+
+  .thumbnail {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .playButton {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: url('/video-btn.png') no-repeat center center;
+    width: 126px;
+    height: 126px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 5px;
+    z-index: 1; // Ensure the button is above the thumbnail
+    transition: opacity 0.3s;
+
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+
+  .video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+  }
+}
+
+/* Media queries to adjust layout based on viewport size */
+@media (max-width: 1200px) {
+  .videoContainer {
+    max-width: 800px; // Adjust max-width for smaller screens
+  }
+}
+
+@media (max-width: 992px) {
+  .videoContainer {
+    max-width: 600px; // Adjust max-width for tablets
+  }
+}
+
+@media (max-width: 768px) {
+  .videoContainer {
+    max-width: 100%; // Full width for small devices
+  }
+
+  .playButton {
+    width: 100px; // Smaller play button for small devices
+    height: 100px;
+  }
+}
+
+@media (max-width: 576px) {
+  .videoContainer {
+
+    max-width: 90%;
+    margin: 20px auto; // Center the container
+
+
+    .playButton {
+      width: 50px; // Even smaller play button for extra small devices
+      height: 50px;
+      border-radius: 100px;
+    }
+
+  }
+}

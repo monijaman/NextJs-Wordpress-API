@@ -1,0 +1,114 @@
+// Define font size variables
+$font-size-headline: 2.5rem;
+$font-color-headline: #151515;
+$font-size-paragraph: 1.2rem;
+$font-size-button: 1rem;
+
+.ctablock {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto; // Center the block horizontally
+  padding: 80px 20px 20px 20px;
+  background-color: #fff; // Background color for the CTA block
+  text-align: center;
+
+  &__image {
+    width: 66px;
+    height: 66px;
+    margin: 0 auto;
+    border-radius: 8px 8px 0 0; // Round top corners
+  }
+
+  &__headline {
+    font-size: $font-size-headline;
+    margin: 20px 0 10px; // Add some spacing around the headline
+    color: $font-color-headline; // Headline text color
+  }
+
+  &__paragraph {
+    font-size: $font-size-paragraph;
+    margin-bottom: 20px; // Space below the paragraph
+    color: $font-color-headline; // Paragraph text color
+    width: 70%;
+    margin: 2.2rem auto;
+    line-height: 1.5rem;
+  }
+
+  &__button {
+    font-size: $font-size-button;
+    padding: 18px 40px;
+    background-color: #fff;
+    color: $font-color-headline;
+    border: 1px solid #8B2351;
+    border-radius: 2px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+  }
+}
+
+@media (max-width: 1000px) {
+
+  .ctablock {
+    padding: 60px 20px 20px 20px;
+
+    &__image {
+      width: 66px;
+      height: 66px;
+      margin: 0 auto;
+      border-radius: 8px 8px 0 0; // Round top corners
+    }
+
+    &__headline {
+      font-size: 2rem;
+    }
+
+    &__paragraph {
+      font-size: 1rem;
+      width: 80%;
+    }
+
+    &__button {
+      padding: 16px 36px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .ctablock {
+    padding: 40px 20px 20px 20px;
+
+    &__headline {
+      font-size: 1.75rem;
+    }
+
+    &__paragraph {
+      font-size: 0.9rem;
+      width: 90%;
+    }
+
+    &__button {
+      padding: 14px 32px;
+    }
+
+  }
+}
+
+@media (max-width: 480px) {
+  .ctablock {
+    padding: 20px 10px 10px 10px;
+
+    &__headline {
+      font-size: 1.5rem;
+    }
+
+    &__paragraph {
+      font-size: 0.8rem;
+      width: 95%;
+    }
+
+    &__button {
+      padding: 12px 28px;
+    }
+  }
+}
